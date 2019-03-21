@@ -49,7 +49,7 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/campgrounds",campgroundRoutes);
 app.use("/", indexRoutes);
 
-app.listen(process.env.port, process.env.ip, (req, res) => {
+app.listen(process.env.PORT, process.env.IP, (req, res) => {
 	console.log("Server started Version 9");
 });
 // app.listen(3000);
