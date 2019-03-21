@@ -48,6 +48,6 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/campgrounds",campgroundRoutes);
 app.use("/", indexRoutes);
 
-app.listen(3000, (req, res) => {
+app.listen(process.env.port, process.env.ip, (req, res) => {
 	console.log("Server started Version 9");
 });
