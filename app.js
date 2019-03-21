@@ -6,6 +6,7 @@ var express = require('express'),
 	LocalStrategy = require("passport-local"),
 	methodOverride = require("method-override"),
 	flash = require("connect-flash"),
+	env = require('dotenv').config(),
 	Campground = require("./models/campground"),
 	Comment = require("./models/comment"),
 	User = require("./models/user"),
@@ -15,8 +16,9 @@ var commentRoutes = require("./routes/comments"),
 	campgroundRoutes = require("./routes/campgrounds"),
 	indexRoutes = require("./routes/index");
 
-//mongoose.connect('mongodb://localhost:27017/yelp_campv9', { useNewUrlParser: true });
-mongoose.connect('mongodb+srv://smileyx96:1314520ziyin@yelpcamp-ky0gl.mongodb.net/test?retryWrites=true', { useNewUrlParser: true });
+console.log(process.env.DATABASEURL);
+mongoose.connect('process.env.DATABASEURL', { useNewUrlParser: true });
+mongoose.connect('', { useNewUrlParser: true });
 app.use(bodyParser.urlencoded({extended:true}));
 mongoose.set("useFindAndModify", false);
 app.set('view engine', 'ejs');
